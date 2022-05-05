@@ -5,6 +5,9 @@ if [ "$EUID" -ne 0 ]
     exit
 fi
 
+echo "Change switch keyboard shortcut to win+space"
+sed -i 's/^XKBOPTIONS=.*$/XKBOPTIONS="grp:win_space_toggle,grp_led:scroll"/' /etc/default/keyboard
+
 echo "Updating repositories"
 apt update
 
@@ -28,7 +31,8 @@ for d in /home/*/ ; do
 	rm tilda.service 2> /dev/null # remove tilda.service if exists
 	wget https://raw.githubusercontent.com/mazanax/bebian/master/.local/share/systemd/user/tilda.service
 	chown -R $CURRENT_USER:$CURRENT_USER "$d/.local/share/systemd/user/"
-	sudo -u $CURRENT_USER systemctl --user enable tilda.service
+	sudo -u $CURRENT_USER systemctl --user enable tilda
+	sudo -u $CURRENT_USER systemctl --user start tilda
 	popd
 done
 
