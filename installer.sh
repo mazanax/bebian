@@ -18,3 +18,9 @@ echo "Installing nvim"
 apt install -y neovim
 
 # install required plugins for neovim
+
+echo "Installing snap"
+apt install -y snapd
+
+echo "-> installing telegram client"
+snap install telegram-desktop
