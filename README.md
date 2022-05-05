@@ -1,3 +1,4 @@
+```
 BBBBBBBBBBBBBBBBB   EEEEEEEEEEEEEEEEEEEEEEBBBBBBBBBBBBBBBBB   IIIIIIIIII               AAA               NNNNNNNN        NNNNNNNN
 B::::::::::::::::B  E::::::::::::::::::::EB::::::::::::::::B  I::::::::I              A:::A              N:::::::N       N::::::N
 B::::::BBBBBB:::::B E::::::::::::::::::::EB::::::BBBBBB:::::B I::::::::I             A:::::A             N::::::::N      N::::::N
@@ -14,8 +15,8 @@ BB:::::BBBBBB::::::BEE::::::EEEEEEEE:::::EBB:::::BBBBBB::::::BII::::::II   A::::
 B:::::::::::::::::B E::::::::::::::::::::EB:::::::::::::::::B I::::::::I  A:::::A               A:::::A  N::::::N       N:::::::N
 B::::::::::::::::B  E::::::::::::::::::::EB::::::::::::::::B  I::::::::I A:::::A                 A:::::A N::::::N        N::::::N
 BBBBBBBBBBBBBBBBB   EEEEEEEEEEEEEEEEEEEEEEBBBBBBBBBBBBBBBBB   IIIIIIIIIIAAAAAAA                   AAAAAAANNNNNNNN         NNNNNNN
-                                                                                                                                 
-                                                                                                                                 
+```
+
 # BEBIAN
 
 Set of scripts to configure Debian 11 as work station.
