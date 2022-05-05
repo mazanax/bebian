@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Telegram
+Comment=
+Exec=snap run telegram-desktop
+Icon=/snap/telegram-desktop/current/meta/gui/icon.png
+Path=
+Terminal=false
+StartupNotify=false
