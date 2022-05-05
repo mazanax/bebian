@@ -18,6 +18,7 @@ for d in /home/*/ ; do
 	CURRENT_USER=$(basename $d)
 	mdkir -p "$d/.config/tilda/"
 	pushd "$d/.config/tilda/"
+	rm config_0 2> /dev/null # remove config if exists
 	wget https://raw.githubusercontent.com/mazanax/bebian/master/.config/tilda/config_0
 	chown -R $CURRENT_USER:$CURRENT_USER "$d/.config/tilda/"
 	popd
@@ -34,11 +35,10 @@ apt install -y snapd
 echo "-> installing telegram client"
 snap install telegram-desktop
 
-# create Telegram desktop icon in all home directories
-# wget -O /home/mazanax/Desktop/Telegram.desktop https://raw.githubusercontent.com/mazanax/bebian/master/Desktop/Telegram.desktop
 for d in /home/*/ ; do
 	CURRENT_USER=$(basename $d)
 	pushd "$d/Desktop"
+	rm Telegram.desktop 2> /dev/null # remove desktop entry if exists
 	wget https://raw.githubusercontent.com/mazanax/bebian/master/Desktop/Telegram.desktop
 	chown -R $CURRENT_USER:$CURRENT_USER $d/Desktop
 	chmod +x Telegram.desktop
