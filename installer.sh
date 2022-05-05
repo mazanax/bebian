@@ -15,7 +15,10 @@ echo "Installing tilda"
 apt install -y tilda
 
 for d in /home/*/ ; do
-	wget -O "$d.config/tilda/config_0" https://raw.githubusercontent.com/mazanax/bebian/master/.config/tilda/config_0
+	mdkir -p "$d.config/tilda/"
+	pushd !$
+	wget https://raw.githubusercontent.com/mazanax/bebian/master/.config/tilda/config_0
+	popd
 done
 
 echo "Installing nvim"
@@ -32,5 +35,7 @@ snap install telegram-desktop
 # create Telegram desktop icon in all home directories
 # wget -O /home/mazanax/Desktop/Telegram.desktop https://raw.githubusercontent.com/mazanax/bebian/master/Desktop/Telegram.desktop
 for d in /home/*/ ; do
-	wget -O "$dDesktop/Telegram.desktop" https://raw.githubusercontent.com/mazanax/bebian/master/.config/tilda/config_0
+	pushd "$d/Desktop"
+	wget https://raw.githubusercontent.com/mazanax/bebian/master/Desktop/Telegram.desktop
+	popd
 done
