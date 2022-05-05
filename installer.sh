@@ -24,3 +24,6 @@ apt install -y snapd
 
 echo "-> installing telegram client"
 snap install telegram-desktop
+
+# create Telegram desktop icon in all home directories
+# wget -O /home/mazanax/Desktop/Telegram.desktop https://raw.githubusercontent.com/mazanax/bebian/master/Desktop/Telegram.desktop
