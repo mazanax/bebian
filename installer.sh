@@ -39,6 +39,19 @@ done
 echo "Installing nvim"
 apt install -y neovim
 
+echo "Installing Chromium Browser"
+apt install -y chromium
+
+for d in /home/*/ ; do
+	CURRENT_USER=$(basename $d)
+	pushd "$d/Desktop"
+	rm Chromium\ Browser.desktop 2> /dev/null # remove desktop entry if exists
+	wget https://raw.githubusercontent.com/mazanax/bebian/master/Desktop/Chromium%20Browser.desktop
+	chown -R $CURRENT_USER:$CURRENT_USER $d/Desktop
+	chmod +x Chromium\ Browser.desktop
+	popd
+done
+
 # install required plugins for neovim
 
 echo "Installing snap"
