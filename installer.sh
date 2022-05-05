@@ -17,9 +17,9 @@ apt install -y tilda
 for d in /home/*/ ; do
 	CURRENT_USER=$(basename $d)
 	mdkir -p "$d/.config/tilda/"
-	pushd !$
+	pushd "$d/.config/tilda/"
 	wget https://raw.githubusercontent.com/mazanax/bebian/master/.config/tilda/config_0
-	chown -R $CURRENT_USER:$CURRENT_USER $d.config/tilda/
+	chown -R $CURRENT_USER:$CURRENT_USER "$d/.config/tilda/"
 	popd
 done
 
