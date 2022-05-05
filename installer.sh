@@ -16,11 +16,19 @@ apt install -y tilda
 
 for d in /home/*/ ; do
 	CURRENT_USER=$(basename $d)
-	mdkir -p "$d/.config/tilda/"
+	mkdir -p "$d/.config/tilda/"
 	pushd "$d/.config/tilda/"
 	rm config_0 2> /dev/null # remove config if exists
 	wget https://raw.githubusercontent.com/mazanax/bebian/master/.config/tilda/config_0
 	chown -R $CURRENT_USER:$CURRENT_USER "$d/.config/tilda/"
+	popd
+	
+	mkdir -p "$d/.local/share/systemd/user/"
+	pushd "$d/.local/share/systemd/user/"
+	rm tilda.service 2> /dev/null # remove tilda.service if exists
+	wget https://raw.githubusercontent.com/mazanax/bebian/master/.local/share/systemd/user/tilda.service
+	chown -R $CURRENT_USER:$CURRENT_USER "$d/.local/share/systemd/user/"
+	sudo -u $CURRENT_USER systemctl --user enable tilda.service
 	popd
 done
 
