@@ -39,6 +39,8 @@ done
 echo "Installing nvim"
 apt install -y neovim
 
+# install required plugins for neovim
+
 echo "Installing Chromium Browser"
 apt install -y chromium
 
@@ -52,7 +54,8 @@ for d in /home/*/ ; do
 	popd
 done
 
-# install required plugins for neovim
+# set chromium as default browser
+update-alternatives --set x-www-browser /usr/bin/chromium
 
 echo "Installing snap"
 apt install -y snapd
